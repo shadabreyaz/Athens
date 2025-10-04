@@ -317,7 +317,7 @@ a {
 
 .hero-info {
     display: flex;
-    gap: 24px;
+    gap: 32px;
 }
 
 .hero-show {
