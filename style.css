@@ -611,10 +611,11 @@ a {
   width: 100%;
   top: 0;
   left: 0;
-  background: #fff;
+  /* background: #fff; */
+  background: var(--bg-primary);
   border-radius: 20px;
   padding: 1.5rem;
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 8px 8px rgba(0, 0, 0, 0.05); */
   text-align: left;
   opacity: 0;
   pointer-events: none;
