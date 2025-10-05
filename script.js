@@ -113,3 +113,14 @@ const observer = new IntersectionObserver((entries, observer) => {
 document.querySelectorAll('.animate-on-scroll').forEach(el => {
   observer.observe(el);
 });
+
+
+// for back to top arrow
+  const scrollBtn = document.getElementById("scrollToTop");
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });

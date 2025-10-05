@@ -22,6 +22,11 @@ h5 {
     font-family: 'Flamenco', cursive;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -68,6 +73,23 @@ a {
       transform: scaleX(1);
       opacity: 0.45;
     }
+}
+/* Bounce animation */
+@keyframes bounceUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+@keyframes bounceDownUp {
+  0%, 100% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
 }
 
 /* Container */
@@ -372,9 +394,15 @@ a {
     color: var(--text-primary);
 }
 .social-icons>i:hover {
-    transform: translateY(-6px);
+    background-color: var(--text-primary);
+    color: var(--bg-primary) ;
 }
-
+.hero-social-1{
+  animation: bounceUpDown 1.5s ease-in-out infinite;
+}
+.hero-social-2{
+  animation: bounceDownUp 1.5s ease-in-out infinite;
+}
 
 /* Project section css */
 .project-section{
@@ -1016,20 +1044,44 @@ a {
     align-items: center;
     justify-content: space-between;
     color: #ffffff91;
+    position: relative;
   }
   .footer-bottom a{
     color: var(--bg-primary);
   }
-  
+
+  .back-to-top{
+    position: absolute;
+    top: -5rem;
+    right: 0;
+    z-index: 99;
+    border: 2px solid;
+    border-radius: 50%;
+    padding: 4px;
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.4s ease;
+    animation: bounceUpDown 1.5s ease-in-out infinite;
+  }
+  .back-to-top:hover{
+    background-color: #fff;
+    color: black;
+  }
 
 /* ============================  Responsive Styles  ============================ */
 /* Tablets (<= 1024px) */
 @media (max-width: 1024px) {
+    .navbar-container {
+      width: 90%;
+      padding: 0.5rem 2.4rem;
+    }
     .menu {
         flex-direction: column;
         gap: 24px;
         width: 100%;
-        top: 106px;
+        top: 100px;
         opacity: 0;
         left: -100%;
         font-size: 20px;
@@ -1127,6 +1179,9 @@ a {
 
 /* Mobiles (<= 768px) */
 @media (max-width: 768px) {
+    .nav-logo img {
+      height: 64px;
+    }
     .hero {
         padding-inline: 1.5rem;
         margin: 12px;
@@ -1181,11 +1236,21 @@ a {
     .footer-contact {
       max-width: 100%;
     }
+    .back-to-top {
+      top: -15rem; 
+    }
 }
 
 
 /* Smaller Mobiles (<= 480px) */
 @media (max-width: 480px) {
+    .navbar-container {
+      padding: 0.4rem 1.5rem;
+    }
+    .menu {
+      gap: 20px;
+      font-size: 16px;
+    }
     .hero-info {
         flex-direction: column;
     }
